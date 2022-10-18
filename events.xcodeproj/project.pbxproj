@@ -15,6 +15,9 @@
 		75E36E8528FEF68F00E81454 /* eventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E8428FEF68F00E81454 /* eventsTests.swift */; };
 		75E36E8F28FEF68F00E81454 /* eventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E8E28FEF68F00E81454 /* eventsUITests.swift */; };
 		75E36E9128FEF68F00E81454 /* eventsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E9028FEF68F00E81454 /* eventsUITestsLaunchTests.swift */; };
+		75E36EA128FEF89200E81454 /* CategoriesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36EA028FEF89200E81454 /* CategoriesApi.swift */; };
+		75E36EA428FEF8E800E81454 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36EA328FEF8E800E81454 /* CategoryModel.swift */; };
+		75E36EA728FEFA3700E81454 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36EA628FEFA3700E81454 /* Id.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		75E36E8A28FEF68F00E81454 /* eventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eventsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E36E8E28FEF68F00E81454 /* eventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsUITests.swift; sourceTree = "<group>"; };
 		75E36E9028FEF68F00E81454 /* eventsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75E36EA028FEF89200E81454 /* CategoriesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesApi.swift; sourceTree = "<group>"; };
+		75E36EA328FEF8E800E81454 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		75E36EA628FEFA3700E81454 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		75E36E6C28FEF68D00E81454 /* events */ = {
 			isa = PBXGroup;
 			children = (
+				75E36E9D28FEF84E00E81454 /* Services */,
 				75E36E6D28FEF68D00E81454 /* AppDelegate.swift */,
 				75E36E6F28FEF68D00E81454 /* SceneDelegate.swift */,
 				75E36E7128FEF68D00E81454 /* ViewController.swift */,
@@ -122,6 +129,48 @@
 				75E36E9028FEF68F00E81454 /* eventsUITestsLaunchTests.swift */,
 			);
 			path = eventsUITests;
+			sourceTree = "<group>";
+		};
+		75E36E9D28FEF84E00E81454 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				75E36E9E28FEF85A00E81454 /* ApiService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		75E36E9E28FEF85A00E81454 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				75E36EA528FEFA1C00E81454 /* TypesAliases */,
+				75E36EA228FEF8D700E81454 /* Models */,
+				75E36E9F28FEF86000E81454 /* Clients */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		75E36E9F28FEF86000E81454 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				75E36EA028FEF89200E81454 /* CategoriesApi.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
+		75E36EA228FEF8D700E81454 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75E36EA328FEF8E800E81454 /* CategoryModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		75E36EA528FEFA1C00E81454 /* TypesAliases */ = {
+			isa = PBXGroup;
+			children = (
+				75E36EA628FEFA3700E81454 /* Id.swift */,
+			);
+			path = TypesAliases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +305,9 @@
 			files = (
 				75E36E7228FEF68D00E81454 /* ViewController.swift in Sources */,
 				75E36E6E28FEF68D00E81454 /* AppDelegate.swift in Sources */,
+				75E36EA728FEFA3700E81454 /* Id.swift in Sources */,
+				75E36EA128FEF89200E81454 /* CategoriesApi.swift in Sources */,
+				75E36EA428FEF8E800E81454 /* CategoryModel.swift in Sources */,
 				75E36E7028FEF68D00E81454 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
