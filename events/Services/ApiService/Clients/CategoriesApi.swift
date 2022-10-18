@@ -8,7 +8,18 @@
 import Foundation
 
 struct CategoriesApi {
-    static func list() -> [CategoryModel] {
-        return []
+    var client: ApiServiceProtocol
+    
+    init(client: any ApiServiceProtocol = ApiService()) {
+        self.client = client
+    }
+    
+    func index(storeId: ID, onError: @escaping () -> Void = {}, onSuccess: @escaping ([CategoryModel]) -> Void ) {
+        client.get(
+            url: "/api/v1/categories",
+            params: [storeId: storeId],
+            onError: onError,
+            onSuccess: onSuccess
+        )
     }
 }
