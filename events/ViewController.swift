@@ -7,17 +7,33 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    
-    override func loadView() {
-        let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = .red
-        self.view = view
-    }
+class ViewController: UITabBarController {
+    let ordersVC = OrdersViewController()
+    let productsVC = ProductsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setTitles()
+        assignViewControllers()
+        setIcons()
+    }
+    
+    private func setTitles() {
+        ordersVC.title = "Pedidos"
+        productsVC.title = "Produtos"
+    }
+    
+    private func assignViewControllers() {
+        self.setViewControllers([ordersVC, productsVC], animated: true)
+    }
+    
+    private func setIcons() {
+        guard let items = self.tabBar.items else { return }
+        
+        let images = ["bag", "ticket"]
+        
+        items.enumerated().forEach { (index, item) in
+            item.image = UIImage(systemName: images[index])
+        }
     }
 }
-

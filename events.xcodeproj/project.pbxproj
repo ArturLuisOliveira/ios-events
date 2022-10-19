@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75DA56F12900857900E2160D /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F02900857900E2160D /* OrdersViewController.swift */; };
+		75DA56F32900867A00E2160D /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F22900867A00E2160D /* ProductsViewController.swift */; };
 		75E36E6E28FEF68D00E81454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E6D28FEF68D00E81454 /* AppDelegate.swift */; };
 		75E36E7028FEF68D00E81454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E6F28FEF68D00E81454 /* SceneDelegate.swift */; };
 		75E36E7228FEF68D00E81454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E7128FEF68D00E81454 /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75DA56F02900857900E2160D /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
+		75DA56F22900867A00E2160D /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		75E36E6A28FEF68D00E81454 /* events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E36E6D28FEF68D00E81454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E36E6F28FEF68D00E81454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +115,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75DA56ED290084FB00E2160D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				75DA56EF2900854300E2160D /* Orders */,
+				75DA56EE2900853E00E2160D /* Products */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75DA56EE2900853E00E2160D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75DA56F22900867A00E2160D /* ProductsViewController.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
+		75DA56EF2900854300E2160D /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				75DA56F02900857900E2160D /* OrdersViewController.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		75E36E6128FEF68D00E81454 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +163,7 @@
 		75E36E6C28FEF68D00E81454 /* events */ = {
 			isa = PBXGroup;
 			children = (
+				75DA56ED290084FB00E2160D /* Views */,
 				75E36E9D28FEF84E00E81454 /* Services */,
 				75E36E6D28FEF68D00E81454 /* AppDelegate.swift */,
 				75E36E6F28FEF68D00E81454 /* SceneDelegate.swift */,
@@ -386,6 +416,8 @@
 				75E36EB328FF041800E81454 /* Cents.swift in Sources */,
 				75E36EB128FF040100E81454 /* URL.swift in Sources */,
 				75E36EA428FEF8E800E81454 /* CategoryModel.swift in Sources */,
+				75DA56F32900867A00E2160D /* ProductsViewController.swift in Sources */,
+				75DA56F12900857900E2160D /* OrdersViewController.swift in Sources */,
 				75E36EA928FEFC2C00E81454 /* ProductModel.swift in Sources */,
 				75E36E7028FEF68D00E81454 /* SceneDelegate.swift in Sources */,
 				75E36EB828FF0A5D00E81454 /* CategoriesMock.swift in Sources */,
