@@ -13,13 +13,12 @@ protocol ApiServiceProtocol {
 }
 
 struct ApiService: ApiServiceProtocol {
-    var baseUrl: String
+    internal var baseUrl: String
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
     
-    
     init(baseUrl: String? = nil){
-        self.baseUrl = baseUrl ?? "localhost:3000"
+        self.baseUrl = baseUrl ?? "http://localhost:3000"
     }
     
     func get<Params, Reponse: Codable>(url: Url, params: Params? = [:], onError: (() -> Void)? = {}, onSuccess: @escaping (Reponse) -> Void) {

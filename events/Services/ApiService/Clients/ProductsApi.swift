@@ -6,7 +6,7 @@
 //
 
 struct ProductsApi {
-    var client: ApiServiceProtocol
+    private var client: ApiServiceProtocol
     
     init(client: any ApiServiceProtocol = ApiService()) {
         self.client = client
@@ -16,7 +16,7 @@ struct ProductsApi {
         let params = ["storeId": storeId, "categoryId": categoryId]
         
         client.get(
-            url: "/api/v1/products",
+            url: "/products",
             params: params,
             onError: onError,
             onSuccess: onSuccess
@@ -25,7 +25,7 @@ struct ProductsApi {
     
     func show(id: ID, onError: @escaping () -> Void = {}, onSuccess: @escaping (ProductModel) -> Void) {
         client.get(
-            url: "/api/v1/products/\(id)",
+            url: "/products/\(id)",
             params: [:],
             onError: onError,
             onSuccess: onSuccess

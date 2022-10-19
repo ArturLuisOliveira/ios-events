@@ -8,7 +8,7 @@
 import Foundation
 
 struct CategoriesApi {
-    var client: ApiServiceProtocol
+    private var client: ApiServiceProtocol
     
     init(client: any ApiServiceProtocol = ApiService()) {
         self.client = client
@@ -16,7 +16,7 @@ struct CategoriesApi {
     
     func index(storeId: ID, onError: @escaping () -> Void = {}, onSuccess: @escaping ([CategoryModel]) -> Void ) {
         client.get(
-            url: "/api/v1/categories",
+            url: "/categories",
             params: [storeId: storeId],
             onError: onError,
             onSuccess: onSuccess
