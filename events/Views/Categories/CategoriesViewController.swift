@@ -8,30 +8,38 @@ import UIKit
 
 class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     private var collectionView: UICollectionView?
+    private var categories: [CategoryModel]? = nil
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
-        layout.itemSize = CGSize(width: (view.frame.size.width/2) - 4, height:( view.frame.size.width/2)-4)
-        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
-        guard let collectionView = collectionView else { return }
-        collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        view.addSubview(collectionView)
-        collectionView.frame = view.bounds
+        return layout
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        initializeCollectionView()
+        fetch()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        guard let categories = categories else { return 0 }
+        
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath)
+       
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
+        
+        guard let categories else { return cell }
+        
+        let category = categories[indexPath.item]
+        cell.boot(name: category.name, image: category.image)
         
         return cell
         
@@ -41,6 +49,29 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
         print(indexPath)
         let productVC = ProductsViewController()
         navigationController?.pushViewController(productVC, animated: true)
+    }
+    
+    private func initializeCollectionView() {
+        layout.itemSize = CGSize(width: (view.frame.size.width/2) - 4, height:( view.frame.size.width/2)-4)
+        collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
+        guard let collectionView = collectionView else { return }
+        
+        collectionView.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: CategoryCollectionViewCell.identifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        view.addSubview(collectionView)
+        collectionView.frame = view.bounds
+    }
+    
+    private func fetch() {
+        let categoriesApi = CategoriesApi()
+        categoriesApi.index(storeId: 1) { categories in
+            DispatchQueue.main.async {
+                self.categories = categories
+                self.collectionView?.reloadData()
+            }
+            
+        }
     }
 }

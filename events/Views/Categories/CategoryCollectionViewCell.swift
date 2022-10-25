@@ -25,7 +25,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
-        imageView.image = UIImage(systemName: "house")
+        
         
         return imageView
     }()
@@ -33,7 +33,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     private let nameView: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Bebidas"
         
         return label
     }()
@@ -63,7 +62,12 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-        
+    }
+    
+    public func boot(name: String, image: String?) {
+        nameView.text = name
+        if let image = image {
+            self.imageView.image = UIImage(systemName: image)
+        }
     }
 }
