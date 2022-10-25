@@ -8,8 +8,8 @@
 import UIKit
 
 class ViewController: UITabBarController {
-    let ordersVC = OrdersViewController()
-    let productsVC = ProductsViewController()
+    let categoriesVC = CategoriesViewController()
+    let ticketsVC = TicketsViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +19,14 @@ class ViewController: UITabBarController {
     }
     
     private func setTitles() {
-        ordersVC.title = "Pedidos"
-        productsVC.title = "Produtos"
+        categoriesVC.title = "Loja"
+        ticketsVC.title = "Tickets"
     }
     
     private func assignViewControllers() {
-        self.setViewControllers([ordersVC, productsVC], animated: true)
+        let nav1 = UINavigationController(rootViewController: categoriesVC)
+        let nav2 = UINavigationController(rootViewController: ticketsVC)
+        self.setViewControllers([nav1, nav2], animated: true)
     }
     
     private func setIcons() {

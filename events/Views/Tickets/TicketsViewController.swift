@@ -7,17 +7,18 @@
 
 import UIKit
 
-class OrdersViewController: UIViewController {
+class TicketsViewController: UIViewController {
+    let productsView = ProductsViewController()
+    
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
-        self.view = view
 //        view.backgroundColor = .blue
+        self.view = view
+        self.view.addSubview(productsView.view)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
 }
-

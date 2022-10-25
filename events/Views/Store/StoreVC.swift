@@ -7,11 +7,14 @@
 
 import UIKit
 
-class ProductsViewController: UIViewController {
+class StoreViewController: UIViewController {
+    let categoriesVC = CategoriesViewController()
+    
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
-//        view.backgroundColor = .blue
         self.view = view
+        let nav1 = UINavigationController(rootViewController: categoriesVC)
+        self.view.addSubview(categoriesVC.view)
     }
     
     override func viewDidLoad() {

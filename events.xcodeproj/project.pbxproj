@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		75DA56F12900857900E2160D /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F02900857900E2160D /* OrdersViewController.swift */; };
-		75DA56F32900867A00E2160D /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F22900867A00E2160D /* ProductsViewController.swift */; };
+		75DA56F12900857900E2160D /* StoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F02900857900E2160D /* StoreVC.swift */; };
+		75DA56F32900867A00E2160D /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F22900867A00E2160D /* TicketsViewController.swift */; };
+		75DA56F7290230EA00E2160D /* CategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F6290230EA00E2160D /* CategoriesVC.swift */; };
+		75DA56FC29023B1800E2160D /* ProductsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56FB29023B1800E2160D /* ProductsVC.swift */; };
+		75DA56FE2902403300E2160D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56FD2902403300E2160D /* CategoryCollectionViewCell.swift */; };
 		75E36E6E28FEF68D00E81454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E6D28FEF68D00E81454 /* AppDelegate.swift */; };
 		75E36E7028FEF68D00E81454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E6F28FEF68D00E81454 /* SceneDelegate.swift */; };
 		75E36E7228FEF68D00E81454 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E36E7128FEF68D00E81454 /* ViewController.swift */; };
@@ -61,8 +64,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		75DA56F02900857900E2160D /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
-		75DA56F22900867A00E2160D /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		75DA56F02900857900E2160D /* StoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreVC.swift; sourceTree = "<group>"; };
+		75DA56F22900867A00E2160D /* TicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewController.swift; sourceTree = "<group>"; };
+		75DA56F6290230EA00E2160D /* CategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesVC.swift; sourceTree = "<group>"; };
+		75DA56FB29023B1800E2160D /* ProductsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsVC.swift; sourceTree = "<group>"; };
+		75DA56FD2902403300E2160D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		75E36E6A28FEF68D00E81454 /* events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75E36E6D28FEF68D00E81454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75E36E6F28FEF68D00E81454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,26 +124,45 @@
 		75DA56ED290084FB00E2160D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				75DA56EF2900854300E2160D /* Orders */,
-				75DA56EE2900853E00E2160D /* Products */,
+				75DA56FA29023B0B00E2160D /* Products */,
+				75DA56F5290230D800E2160D /* Categories */,
+				75DA56EF2900854300E2160D /* Store */,
+				75DA56EE2900853E00E2160D /* Tickets */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		75DA56EE2900853E00E2160D /* Products */ = {
+		75DA56EE2900853E00E2160D /* Tickets */ = {
 			isa = PBXGroup;
 			children = (
-				75DA56F22900867A00E2160D /* ProductsViewController.swift */,
+				75DA56F22900867A00E2160D /* TicketsViewController.swift */,
 			);
-			path = Products;
+			path = Tickets;
 			sourceTree = "<group>";
 		};
-		75DA56EF2900854300E2160D /* Orders */ = {
+		75DA56EF2900854300E2160D /* Store */ = {
 			isa = PBXGroup;
 			children = (
-				75DA56F02900857900E2160D /* OrdersViewController.swift */,
+				75DA56F02900857900E2160D /* StoreVC.swift */,
 			);
-			path = Orders;
+			path = Store;
+			sourceTree = "<group>";
+		};
+		75DA56F5290230D800E2160D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				75DA56F6290230EA00E2160D /* CategoriesVC.swift */,
+				75DA56FD2902403300E2160D /* CategoryCollectionViewCell.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		75DA56FA29023B0B00E2160D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75DA56FB29023B1800E2160D /* ProductsVC.swift */,
+			);
+			path = Products;
 			sourceTree = "<group>";
 		};
 		75E36E6128FEF68D00E81454 = {
@@ -409,15 +434,18 @@
 				75E36E7228FEF68D00E81454 /* ViewController.swift in Sources */,
 				75E36EBA28FF0AF200E81454 /* ProductsMock.swift in Sources */,
 				75E36E6E28FEF68D00E81454 /* AppDelegate.swift in Sources */,
+				75DA56FC29023B1800E2160D /* ProductsVC.swift in Sources */,
 				75E36EB528FF059000E81454 /* ApiService.swift in Sources */,
 				75E36EAD28FEFF2100E81454 /* ProductsApi.swift in Sources */,
+				75DA56F7290230EA00E2160D /* CategoriesVC.swift in Sources */,
 				75E36EA728FEFA3700E81454 /* ID.swift in Sources */,
 				75E36EA128FEF89200E81454 /* CategoriesApi.swift in Sources */,
 				75E36EB328FF041800E81454 /* Cents.swift in Sources */,
+				75DA56FE2902403300E2160D /* CategoryCollectionViewCell.swift in Sources */,
 				75E36EB128FF040100E81454 /* URL.swift in Sources */,
 				75E36EA428FEF8E800E81454 /* CategoryModel.swift in Sources */,
-				75DA56F32900867A00E2160D /* ProductsViewController.swift in Sources */,
-				75DA56F12900857900E2160D /* OrdersViewController.swift in Sources */,
+				75DA56F32900867A00E2160D /* TicketsViewController.swift in Sources */,
+				75DA56F12900857900E2160D /* StoreVC.swift in Sources */,
 				75E36EA928FEFC2C00E81454 /* ProductModel.swift in Sources */,
 				75E36E7028FEF68D00E81454 /* SceneDelegate.swift in Sources */,
 				75E36EB828FF0A5D00E81454 /* CategoriesMock.swift in Sources */,
