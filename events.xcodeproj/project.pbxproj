@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75CD7F3E290834400025160B /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CD7F3D290834400025160B /* ProductTableViewCell.swift */; };
 		75DA56F12900857900E2160D /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F02900857900E2160D /* StoreViewController.swift */; };
 		75DA56F32900867A00E2160D /* TicketsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F22900867A00E2160D /* TicketsViewController.swift */; };
 		75DA56F7290230EA00E2160D /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DA56F6290230EA00E2160D /* CategoriesViewController.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75CD7F3D290834400025160B /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		75DA56F02900857900E2160D /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		75DA56F22900867A00E2160D /* TicketsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewController.swift; sourceTree = "<group>"; };
 		75DA56F6290230EA00E2160D /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				75DA56FB29023B1800E2160D /* ProductsViewController.swift */,
+				75CD7F3D290834400025160B /* ProductTableViewCell.swift */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				75DA56F12900857900E2160D /* StoreViewController.swift in Sources */,
 				75E36EA928FEFC2C00E81454 /* ProductModel.swift in Sources */,
 				75E36E7028FEF68D00E81454 /* SceneDelegate.swift in Sources */,
+				75CD7F3E290834400025160B /* ProductTableViewCell.swift in Sources */,
 				75E36EB828FF0A5D00E81454 /* CategoriesMock.swift in Sources */,
 				75E36EAF28FF03F400E81454 /* ISOString.swift in Sources */,
 			);

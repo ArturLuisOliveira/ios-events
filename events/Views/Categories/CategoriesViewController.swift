@@ -46,8 +46,10 @@ class CategoriesViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
         let productVC = ProductsViewController()
+        guard let categories = categories else { return }
+        let category = categories[indexPath.item]
+        productVC.boot(categoryId: category.id)
         navigationController?.pushViewController(productVC, animated: true)
     }
     

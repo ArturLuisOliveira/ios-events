@@ -7,16 +7,19 @@
 import UIKit
 import Foundation
 
-class ProductsViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
-
+class ProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    var products: [ProductModel]? = nil
+    var categoryId: ID? = nil
     let tableView = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(ProductTableViewCell.self, forCellReuseIdentifier: ProductTableViewCell.identifier)
         tableView.delegate = self
         tableView.dataSource = self
+        fetch()
     }
     
     override func viewDidLayoutSubviews() {
@@ -25,14 +28,37 @@ class ProductsViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        guard let products = products else { return 0 }
+        
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Cell \(indexPath)"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
+       
+        guard let products = products else { return cell }
+        
+        let product = products[indexPath.item]
+        cell.boot(product: product)
         
         return cell
     }
     
+    public func boot(categoryId: ID) {
+        self.categoryId = categoryId
+    }
+    
+    public func fetch() {
+        guard let categoryId = categoryId else { return }
+        let productsApi = ProductsApi()
+        productsApi.index(storeId: 1, categoryId: categoryId) { products in
+            
+            DispatchQueue.main.async {
+                print(products)
+                self.products = products
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
