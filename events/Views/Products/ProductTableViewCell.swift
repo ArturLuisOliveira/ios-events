@@ -22,6 +22,17 @@ class ProductTableViewCell: UITableViewCell {
         return stackView
     }()
     
+    let horizontalStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.spacing = 5
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        
+        return stackView
+    }()
+    
     let nameView: UILabel = {
         let textView = UILabel()
         textView.translatesAutoresizingMaskIntoConstraints = false
@@ -45,8 +56,11 @@ class ProductTableViewCell: UITableViewCell {
     
     let photoView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .systemPink
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .center
+        imageView.clipsToBounds = true
+        imageView.heightAnchor.constraint(equalToConstant: 94).isActive = true
         
         return imageView
     }()
@@ -76,23 +90,19 @@ class ProductTableViewCell: UITableViewCell {
         textStack.addArrangedSubview(nameView)
         textStack.addArrangedSubview(descriptionView)
         textStack.addArrangedSubview(priceView)
-        contentView.addSubview(textStack)
-        contentView.addSubview(photoView)
-        let textStackContraints = [
-            textStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
-            textStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 6),
-            textStack.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 6),
-            photoView.rightAnchor.constraint(equalTo: photoView.leftAnchor, constant: 6),
-        ]
-        let photoViewConstraints = [
-            photoView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
-            photoView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 6),
-            photoView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: 6),
-            photoView.heightAnchor.constraint(equalToConstant: 100),
-            photoView.widthAnchor.constraint(equalToConstant: 100)
-        ]
+        horizontalStack.addArrangedSubview(textStack)
+        horizontalStack.addArrangedSubview(photoView)
+      
+        contentView.addSubview(horizontalStack)
         
-        NSLayoutConstraint.activate(textStackContraints + photoViewConstraints)
+        let horizontalStackContraints = [
+            horizontalStack.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 6),
+            horizontalStack.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 6),
+            horizontalStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
+            horizontalStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 6)
+        ]
+
+        NSLayoutConstraint.activate(horizontalStackContraints)
     }
     
     public func boot(product: ProductModel) {
@@ -100,7 +110,10 @@ class ProductTableViewCell: UITableViewCell {
         self.nameView.text = product.name
         self.descriptionView.text = product.description
         self.priceView.text = String(product.price)
-        self.photoView.image = UIImage(systemName: "house")
+        if let image = product.image {
+            self.photoView.image = UIImage(named: image)
+        }
+        
     }
 
 }

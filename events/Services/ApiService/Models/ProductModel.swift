@@ -12,4 +12,5 @@ struct ProductModel: Codable, Identifiable, Equatable {
     var price: Cents
     var name: String
     var description: String
+    var image: Url?
 }
