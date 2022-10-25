@@ -33,6 +33,10 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         return products.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 100
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ProductTableViewCell.identifier, for: indexPath) as! ProductTableViewCell
@@ -55,7 +59,6 @@ class ProductsViewController: UIViewController, UITableViewDelegate, UITableView
         productsApi.index(storeId: 1, categoryId: categoryId) { products in
             
             DispatchQueue.main.async {
-                print(products)
                 self.products = products
                 self.tableView.reloadData()
             }
